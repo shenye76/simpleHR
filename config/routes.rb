@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     registrations: 'companies/registrations',
     sessions: "companies/sessions",
   }
-  root 'companies#edit' #後ほど変更する
+  root 'employees#new' #後ほど変更する
   resources :companies, only: [:edit, :update]
+  resources :employees, only: [:new, :create]
 
 end
