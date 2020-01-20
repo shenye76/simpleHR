@@ -1,5 +1,10 @@
 class EmployeesController < ApplicationController
 
+  def index
+    @employees = Employee.where(company_id: current_company.id) #後ほど社員No.順になるようにorderを追記
+  end
+
+
   def new
     @employee = Employee.new
   end

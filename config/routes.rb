@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   root 'companies#index'
   resources :companies, only: [:edit, :update]
-  resources :employees, only: [:new, :create, :edit, :update]
+  resources :employees, only: [:index, :new, :create, :edit, :update]
 
 end
