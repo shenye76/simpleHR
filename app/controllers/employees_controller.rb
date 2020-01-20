@@ -13,7 +13,22 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def edit
+    @employee = Employee.find(params[:id])
+    if @employee.company_id == current_company.id
+    else
+      redirect_to root_path
+    end
+  end
 
+  def update
+    @employee = Employee.find(params[:id])
+    if @employee.update(employee_params)
+      redirect_to root_path #後ほど従業員一覧に変更
+    else
+      render :edit
+    end
+  end
 
 
 
