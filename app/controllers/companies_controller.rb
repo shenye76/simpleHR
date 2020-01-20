@@ -1,5 +1,11 @@
 class CompaniesController < ApplicationController
 
+
+def index
+  @company = current_company
+end
+
+
   def edit
   end
 

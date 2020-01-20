@@ -1,0 +1,6 @@
+.left
+  = @company.name
+
+.right
+  =link_to edit_company_path(@company.id) do
+    = icon('fas', 'cog', class: "right__btn")
