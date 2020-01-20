@@ -54,4 +54,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+<<<<<<< Updated upstream
 gem 'haml-rails'
+=======
+gem 'haml-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem "font-awesome-sass"
+>>>>>>> Stashed changes
