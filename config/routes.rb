@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     registrations: 'companies/registrations',
     sessions: "companies/sessions",
   }
+
   root 'companies#index'
   resources :companies, only: [:edit, :update]
+  resources :employees, only: [:new, :create]
 
 end
