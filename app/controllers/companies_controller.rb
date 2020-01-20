@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-
+  before_action :set_company
 
 def index
   @company = current_company
@@ -22,4 +22,8 @@ end
   def company_params
     params.require(:company).permit(:name, :email)
   end
+end
+
+def set_company
+  @company = current_company
 end

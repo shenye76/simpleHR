@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+  before_action :set_company
 
   def index
     @employees = Employee.where(company_id: current_company.id) #後ほど社員No.順になるようにorderを追記
@@ -81,5 +82,6 @@ private
   end
 
   def set_company
-    @company = Company.find(params[:id])
+    @company = current_company
   end
+   
