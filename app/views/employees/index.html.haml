@@ -1,3 +1,8 @@
 -# 従業員一覧ページ
-- @employees.each do |employee|
-  =employee.family_name
+.employee__index
+  - @employees.each do |employee|
+    .employee__index__employee__name
+      = link_to edit_employee_path(employee.id) do
+        =employee.family_name
+        =employee.first_name
+        
