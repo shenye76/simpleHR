@@ -1,6 +1,13 @@
-.left
-  = @company.name
+.header
+  .header__name
+    = @company.name
 
-.right
-  =link_to edit_company_path(@company.id) do
-    = icon('fas', 'cog', class: "right__btn")
+  .header__edit
+    - if company_signed_in?
+      =link_to edit_company_path(@company.id) do
+        = icon('fas', 'cog', class: "right__btn")
+  
+  .header__signout
+    - if company_signed_in?
+      = link_to "ログアウト", destroy_company_session_path, method: :delete, class: 'btn'
+

@@ -19,6 +19,8 @@ class EmployeesController < ApplicationController
     end
   end
 
+  # 利用者は常に自社従業員情報を編集可能であると想定、showは不要
+
   def edit
     @employee = Employee.find(params[:id])
     if @employee.company_id == current_company.id
