@@ -1,4 +1,10 @@
 class EmployeesController < ApplicationController
+  before_action :set_company
+
+  def index
+    @employees = Employee.where(company_id: current_company.id) #後ほど社員No.順になるようにorderを追記
+  end
+
 
   def new
     @employee = Employee.new
@@ -12,6 +18,8 @@ class EmployeesController < ApplicationController
       render :new
     end
   end
+
+  # 利用者は常に自社従業員情報を編集可能であると想定、showは不要
 
   def edit
     @employee = Employee.find(params[:id])
@@ -76,5 +84,6 @@ private
   end
 
   def set_company
-    @company = Company.find(params[:id])
+    @company = current_company
   end
+   
