@@ -1,10 +1,9 @@
 class CompaniesController < ApplicationController
   before_action :set_company
 
-def index
-  @company = current_company
-end
-
+  def index
+    @company = current_company
+  end
 
   def edit
   end

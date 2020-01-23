@@ -5,6 +5,13 @@ class EmployeesController < ApplicationController
     @employees = Employee.where(company_id: current_company.id) #後ほど社員No.順になるようにorderを追記
   end
 
+  def task
+    @employees = Employee.where(company_id: current_company.id)
+    @social_insurance_acquisition_procedures\
+      = @employees.where(social_insurance_condition: 1)
+    @employment_insurance_acquisition_procedures\
+      = @employees.where(employment_insurance_condition: 1)
+  end
 
   def new
     @employee = Employee.new

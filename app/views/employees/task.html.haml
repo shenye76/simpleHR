@@ -1,0 +1,28 @@
+-# タスクページ
+.task
+  .task__acquisition
+    .task__acquisition__social_insurance
+      社会保険資格取得手続
+      - @social_insurance_acquisition_procedures.each do |employee|
+        = link_to "#" do
+          .task__acquisition_date
+            =employee.social_insurance_acquisition_date
+          .task__employee__name
+            =employee.family_name
+            =employee.first_name
+
+
+
+
+    .task__acquisition__employment_insurance
+      雇用保険資格取得手続
+      - @employment_insurance_acquisition_procedures.each do |employee|
+        = link_to "#" do
+          .task__acquisition_date
+            =employee.employment_insurance_acquisition_date
+          .task__employee__name
+            =employee.family_name
+            =employee.first_name
+
+
+
