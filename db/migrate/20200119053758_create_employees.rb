@@ -27,9 +27,11 @@ class CreateEmployees < ActiveRecord::Migration[6.0]
       t.integer :monthly_remuneration
       t.integer :standard_monthly_remuneration
       t.date    :social_insurance_acquisition_date
+      t.integer :social_insurance_condition
       t.integer :health_insurance_number
       t.integer :basic_pension_number
       t.date    :employment_insurance_acquisition_date
+      t.integer :employment_insurance_condition
       t.integer :employment_insurance_number
       t.text    :image
       t.timestamps

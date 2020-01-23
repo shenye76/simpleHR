@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2020_01_19_053758) do
     t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "social_insurance_condition"
+    t.integer "employment_insurance_condition"
     t.index ["company_id"], name: "index_employees_on_company_id"
     t.index ["family_name"], name: "index_employees_on_family_name"
     t.index ["family_name_f"], name: "index_employees_on_family_name_f"
