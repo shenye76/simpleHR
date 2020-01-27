@@ -10,9 +10,9 @@
           .task__employee__name
             =employee.family_name
             =employee.first_name
-
-
-
+        .task__completed
+          = form_with model: employee, url: task_completed_social_insurance_employee_path(employee), method: "patch" do |f|
+            = f.submit "手続済にする"
 
     .task__acquisition__employment_insurance
       雇用保険資格取得手続
@@ -23,6 +23,11 @@
           .task__employee__name
             =employee.family_name
             =employee.first_name
+        .task__completed
+          = form_with model: employee, url: task_completed_employment_insurance_employee_path(employee), method: "patch" do |f|
+            = f.submit "手続済にする"
+
+
 
 
 

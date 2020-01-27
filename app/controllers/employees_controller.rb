@@ -13,6 +13,24 @@ class EmployeesController < ApplicationController
       = @employees.where(employment_insurance_condition: 1)
   end
 
+  def task_completed_social_insurance
+    @employee = Employee.find(params[:id])
+    if @employee.update(social_insurance_condition: 2)
+      redirect_to task_employees_path
+    else
+      render :task
+    end
+  end
+
+  def task_completed_employment_insurance
+    @employee = Employee.find(params[:id])
+    if @employee.update(employment_insurance_condition: 2)
+      redirect_to task_employees_path
+    else
+      render :task
+    end
+  end
+
   def new
     @employee = Employee.new
   end
