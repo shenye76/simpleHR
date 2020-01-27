@@ -11,7 +11,11 @@
         = f.text_field :family_name_f, class: 'form__name-left', placeholder: '姓（ﾌﾘｶﾞﾅ）'
         = f.text_field :first_name_f, class: 'form__name-right', placeholder: '名（ﾌﾘｶﾞﾅ）'
     .photo
-      = f.file_field :image
+      = f.file_field :image, id: "user_img"
+      - if @employee.image.present?
+        = image_tag @employee.image.url, id: "img_prev"
+      - else
+        = image_tag "https://placehold.jp/20/c0c0c0/ffffff/135x180.jpg?text=sample", id: "img_prev"
     .birthday
       生年月日
       = f.date_field :birthday, class: 'form__name-right'
