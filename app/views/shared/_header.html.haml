@@ -1,6 +1,7 @@
 .header
   .header__name
-    = @company.name
+    = link_to root_path do
+      = @company.name
 
   .header__edit
     - if company_signed_in?
