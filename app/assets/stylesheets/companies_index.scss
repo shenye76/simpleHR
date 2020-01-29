@@ -1,12 +1,12 @@
 .companies__index {
   min-width: 1000px;
   height: calc(100vh - 100px);
-  background-color: $margin;
+  background-color: rgb(245, 243, 243);
   &__center {
     height: 100%;
     width: 1000px;
     margin: 0 auto;
-    background-color:$main_white;
+    background-color: $main_white;
     &__upper {
       height: 50%;
       width: 100%;
