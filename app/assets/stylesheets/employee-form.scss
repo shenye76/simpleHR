@@ -1,0 +1,65 @@
+.employee-form {
+  min-width: 1000px;
+  height: calc(100vh - 100px);
+  background-color: $margin;
+  &__center {
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    background-color:$main_white;
+    padding: 20px;
+    position: relative;
+    &____employee_id {
+      
+    }
+    #img_prev {
+      width: 135px;
+      height: 180px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .image_tag__word {
+      font-size: 14px;
+      color: #ffffff;
+      width: 135px;
+      position: absolute;
+      top: 89px;
+      right: 20px;
+      text-align: center;
+    }
+
+
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

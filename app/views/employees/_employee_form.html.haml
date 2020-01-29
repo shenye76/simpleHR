@@ -1,80 +1,84 @@
 .employee-form
-  = form_with model: @employee, method: method.to_sym do |f|
-    .employee_id
-      従業員NO.
-      = f.text_field :employee_id
-    .name
-      .name__kanji
-        = f.text_field :family_name, class: 'form__name-left', placeholder: '姓'
-        = f.text_field :first_name, class: 'form__name-right', placeholder: '名'
-      .name__hurigana
-        = f.text_field :family_name_f, class: 'form__name-left', placeholder: '姓（ﾌﾘｶﾞﾅ）'
-        = f.text_field :first_name_f, class: 'form__name-right', placeholder: '名（ﾌﾘｶﾞﾅ）'
-    .photo
-      = f.file_field :image, id: "user_img"
-      - if @employee.image.present?
-        = image_tag @employee.image.url, id: "img_prev"
-      - else
-        = image_tag "https://placehold.jp/20/c0c0c0/ffffff/135x180.jpg?text=sample", id: "img_prev"
-    .birthday
-      生年月日
-      = f.date_field :birthday, class: 'form__name-right'
-    .sex
-      性別
-      = f.select :sex, Employee.sexes.keys, { prompt: '---' }
-    .address
-      郵便番号
-      = f.number_field :postal_code
-      住所
-      = f.text_field :address
-      住所（フリガナ）
-      = f.text_field :address_f
-    .hire_date
-      入社日
-      = f.date_field :hire_date
-    .retirement_date
-      退職日
-      = f.date_field :retirement_date
-    .reason_for_retirement
-      退職理由
-      = f.text_field :reason_for_retirement
-    .employment_status
-      雇用形態  
-      = f.select :employment_status, ["---", "正社員", "契約社員", "パート・アルバイト", "嘱託社員", "役員"]
-    .department
-      所属部門
-      = f.select :department, ["---", "人事", "経理", "営業", "役員", "その他"]
-    .working_hours
-      労働時間
-      = f.number_field :working_hours
-      労働日数
-      = f.number_field :working_days
-    .payment
-      給与支払形態
-      = f.select :pay_type, Employee.pay_types.keys, { prompt: '---' }
-      給与支給額
-      = f.number_field :amount_of_payment
-      通勤手当
-      = f.number_field :commuting_allowance
-      現金
-      = f.number_field :cash
-      現物
-      = f.number_field :in_kind
-      報酬月額
-      = f.number_field :monthly_remuneration
-      標準報酬月額
-      = f.number_field :standard_monthly_remuneration
-    .social_insurance
-      社会保険加入日
-      = f.date_field :social_insurance_acquisition_date
-      健康保険被保険者番号
-      = f.number_field :health_insurance_number
-      基礎年金番号
-      = f.number_field :basic_pension_number
-    .employment_insurance
-      雇用保険加入日
-      = f.date_field :employment_insurance_acquisition_date
-      雇用保険被保険者番号
-      = f.number_field :employment_insurance_number
-    .submit
-      = f.submit 'Send', class: 'form__submit'
+  .employee-form__center
+    = form_with model: @employee, method: method.to_sym do |f|
+      .employee-form__center__employee_id
+        従業員NO.
+        = f.text_field :employee_id, class: "employee-form__center__employee_id__form form"
+      .name
+        .name__kanji
+          = f.text_field :family_name, class: 'form__name-left', placeholder: '姓'
+          = f.text_field :first_name, class: 'form__name-right', placeholder: '名'
+        .name__hurigana
+          = f.text_field :family_name_f, class: 'form__name-left', placeholder: '姓（ﾌﾘｶﾞﾅ）'
+          = f.text_field :first_name_f, class: 'form__name-right', placeholder: '名（ﾌﾘｶﾞﾅ）'
+      .photo
+        %label{for: "user_img"}
+          = f.file_field :image, id: "user_img", style: "display:none;"
+          - if @employee.image.present?
+            = image_tag @employee.image.url, id: "img_prev"
+          - else
+            = image_tag "https://placehold.jp/c0c0c0/c2c2c2/135x180.jpg?", id: "img_prev"
+            .image_tag__word
+              ここをクリックして写真を選択
+      .birthday
+        生年月日
+        = f.date_field :birthday, class: 'form__name-right'
+      .sex
+        性別
+        = f.select :sex, Employee.sexes.keys, { prompt: '---' }
+      .address
+        郵便番号
+        = f.number_field :postal_code
+        住所
+        = f.text_field :address
+        住所（フリガナ）
+        = f.text_field :address_f
+      .hire_date
+        入社日
+        = f.date_field :hire_date
+      .retirement_date
+        退職日
+        = f.date_field :retirement_date
+      .reason_for_retirement
+        退職理由
+        = f.text_field :reason_for_retirement
+      .employment_status
+        雇用形態  
+        = f.select :employment_status, ["---", "正社員", "契約社員", "パート・アルバイト", "嘱託社員", "役員"]
+      .department
+        所属部門
+        = f.select :department, ["---", "人事", "経理", "営業", "役員", "その他"]
+      .working_hours
+        労働時間
+        = f.number_field :working_hours
+        労働日数
+        = f.number_field :working_days
+      .payment
+        給与支払形態
+        = f.select :pay_type, Employee.pay_types.keys, { prompt: '---' }
+        給与支給額
+        = f.number_field :amount_of_payment
+        通勤手当
+        = f.number_field :commuting_allowance
+        現金
+        = f.number_field :cash
+        現物
+        = f.number_field :in_kind
+        報酬月額
+        = f.number_field :monthly_remuneration
+        標準報酬月額
+        = f.number_field :standard_monthly_remuneration
+      .social_insurance
+        社会保険加入日
+        = f.date_field :social_insurance_acquisition_date
+        健康保険被保険者番号
+        = f.number_field :health_insurance_number
+        基礎年金番号
+        = f.number_field :basic_pension_number
+      .employment_insurance
+        雇用保険加入日
+        = f.date_field :employment_insurance_acquisition_date
+        雇用保険被保険者番号
+        = f.number_field :employment_insurance_number
+      .submit
+        = f.submit 'Send', class: 'form__submit'
