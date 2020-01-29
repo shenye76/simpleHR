@@ -10,6 +10,7 @@ $(document).on('turbolinks:load', ()=> {
         $('#img_prev').attr('src', e.target.result);
       }
       reader.readAsDataURL(input.files[0]);
+      $('.image_tag__word').hide();
     }
   }
   $("#user_img").change(function(){

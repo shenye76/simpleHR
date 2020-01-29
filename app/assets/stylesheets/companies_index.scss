@@ -6,7 +6,7 @@
     height: 100%;
     width: 1000px;
     margin: 0 auto;
-    background-color: $mainwhite;
+    background-color: #ffffff;
     &__upper {
       height: 50%;
       width: 100%;
@@ -17,7 +17,7 @@
         height: calc(20vh - 20px);
         margin: calc(20vh - 20px) 5% calc(10vh - 10px);
         border-radius: 30px;
-        background-color: $btn_blue;
+        background-color: rgb(37, 186, 223);
         box-shadow: 4px 4px rgba(0,0,0,0.6);
         text-shadow:1px 1px #555;
         &__link {
@@ -35,7 +35,7 @@
         height: calc(20vh - 20px);
         margin: calc(20vh - 20px) 5% calc(10vh - 10px);
         border-radius: 30px;
-        background-color: $btn_blue;
+        background-color: rgb(37, 186, 223);
         box-shadow: 4px 4px rgba(0,0,0,0.6);
         text-shadow:1px 1px #555;
         &__link {
@@ -59,7 +59,7 @@
         height: calc(20vh - 20px);
         margin: calc(10vh - 10px) 5% calc(20vh - 20px);
         border-radius: 30px;
-        background-color: $btn_blue;
+        background-color: rgb(37, 186, 223);
         box-shadow: 4px 4px rgba(0,0,0,0.6);
         text-shadow:1px 1px #555;
         &__link {
@@ -78,7 +78,7 @@
         height: calc(20vh - 20px);
         margin: calc(10vh - 10px) 5% calc(20vh - 20px);
         border-radius: 30px;
-        background-color: $btn_blue;
+        background-color: rgb(37, 186, 223);
         box-shadow: 4px 4px rgba(0,0,0,0.6);
         text-shadow:1px 1px #555;
         &__link {
