@@ -1,6 +1,13 @@
-.list
-  =link_to "従業員一覧", employees_path
-.list
-  =link_to "従業員登録", new_employee_path
-.list
-  =link_to "タスク", task_employees_path
+-# トップページ
+.companies__index
+  .companies__index__center
+    .companies__index__center__upper
+      .companies__index__center__upper__index
+        =link_to "従業員一覧", employees_path, class: "companies__index__center__upper__index__link link"
+      .companies__index__center__upper__registration
+        =link_to "従業員登録", new_employee_path, class: "companies__index__center__upper__registration__link link"
+    .companies__index__center__lower
+      .companies__index__center__lower__task
+        =link_to "タスク", task_employees_path, class: "companies__index__center__lower__task__link link"
+      .companies__index__center__lower__e-gov
+        =link_to "e-gov送信データ", "#", class: "companies__index__center__lower__e-gov__link link"

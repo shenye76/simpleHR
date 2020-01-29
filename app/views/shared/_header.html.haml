@@ -1,14 +1,15 @@
 .header
-  .header__name
-    = link_to root_path do
-      = @company.name
+  .header__center
+    .header__center__left
+      = link_to root_path, class: "header__center__left__link link" do
+        = @company.name
 
-  .header__edit
-    - if company_signed_in?
-      =link_to edit_company_path(@company.id) do
-        = icon('fas', 'cog', class: "right__btn")
-  
-  .header__signout
-    - if company_signed_in?
-      = link_to "ログアウト", destroy_company_session_path, method: :delete, class: 'btn'
+    .header__center__right
+      .header__center__right__edit
+        - if company_signed_in?
+          =link_to edit_company_path(@company.id) do
+            = icon('fas', 'cog', class: "header__center__right__edit__btn")
 
+      .header__center__right__signout
+        - if company_signed_in?
+          = link_to "ログアウト", destroy_company_session_path, method: :delete, class: 'header__center__right__signout__link link'
