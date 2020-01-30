@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :set_company
+  layout "header"
 
   def index
     @employees = Employee.where(company_id: current_company.id) #後ほど社員No.順になるようにorderを追記
