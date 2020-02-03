@@ -16,7 +16,7 @@
     &__table {
       width: 960px;
       overflow: scroll;
-      height: 540px;
+      max-height: 540px;
       background-color: lightskyblue;
       color: black;
       border-left: solid 2px blue;
