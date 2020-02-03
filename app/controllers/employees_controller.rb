@@ -3,7 +3,7 @@ class EmployeesController < ApplicationController
   layout "header"
 
   def index
-    @employees = Employee.where(company_id: current_company.id) #後ほど社員No.順になるようにorderを追記
+    @employees = Employee.where(company_id: current_company.id).order('employee_id ASC')
   end
 
   def task

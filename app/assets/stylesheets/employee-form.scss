@@ -159,8 +159,6 @@
       }
     }
 
-
-
     #img_prev {
       width: 135px;
       height: 180px;
@@ -177,12 +175,10 @@
       right: 20px;
       text-align: center;
     }
-
-
   }
-
 }
 
+// 給与
 .employee-form__center__payment {
   position: absolute;
   top: 20px;
@@ -218,6 +214,7 @@
   }
 }
 
+// 雇用保険
 .employee-form__center__employment_insurance {
   position: absolute;
   top: 280px;
@@ -245,6 +242,7 @@
   }
 }
 
+// 社会保険
 .employee-form__center__social_insurance {
   position: absolute;
   top: 280px;
@@ -328,28 +326,3 @@
     height: 40px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

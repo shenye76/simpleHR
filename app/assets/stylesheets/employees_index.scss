@@ -1,0 +1,124 @@
+// 従業員一覧ページ
+.employee-index {
+  min-width: 1000px;
+  height: 621px;
+  background-color: rgb(245, 243, 243);
+  font-size: 14px;
+  &__center {
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    &__title {
+      font-size: 24px;
+    }
+    &__table {
+      width: 960px;
+      overflow: scroll;
+      height: 540px;
+      background-color: lightskyblue;
+      color: black;
+      border-left: solid 2px blue;
+      border-right: solid 2px blue;
+      &__title {
+        display: flex;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 2100px;
+        background-color: blue;
+        color: #ffffff;
+        font-weight: bold;
+        &__employee_id {
+          width: 100px;
+        }
+        &__name_kanji {
+          width: 150px;
+        }
+        &__name_furigana {
+          width: 150px;
+        }
+        &__birthday {
+          width: 150px;
+        }
+        &__address {
+          width: 500px;
+        }
+        &__hire_date {
+          width: 150px;
+        }
+        &__retirement_date {
+          width: 150px;
+        }
+        &__employment_status {
+          width: 150px;
+        }
+        &__department {
+          width: 150px;
+        }
+        &__employment_insurance_number {
+          width: 150px;
+        }
+        &__health_insurance_number {
+          width: 150px;
+        }
+        &__basic_pension_number {
+          width: 150px;
+        }
+      }
+      &__data {
+        display: flex;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 2100px;
+        &:hover {
+          background-color: rgb(5, 171, 236);
+        }
+        &__employee_id {
+          width: 100px;
+        }
+        &__name_kanji {
+          width: 150px;
+        }
+        &__name_furigana {
+          width: 150px;
+        }
+        &__birthday {
+          width: 150px;
+        }
+        &__address {
+          width: 500px;
+        }
+        &__hire_date {
+          width: 150px;
+        }
+        &__retirement_date {
+          width: 150px;
+        }
+        &__employment_status {
+          width: 150px;
+        }
+        &__department {
+          width: 150px;
+        }
+        &__employment_insurance_number {
+          width: 150px;
+        }
+        &__health_insurance_number {
+          width: 150px;
+        }
+        &__basic_pension_number {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+.table_border {
+  border-bottom: solid 2px blue;
+  border-right: solid 1px blue;
+  color: black;
+}
