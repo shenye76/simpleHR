@@ -1,7 +1,8 @@
 .employee-form {
   min-width: 1000px;
-  height: calc(100vh - 100px);
+  height: 621px;
   background-color: rgb(245, 243, 243);
+  font-size: 14px;
   &__center {
     height: 100%;
     width: 1000px;
@@ -9,9 +10,157 @@
     background-color: #ffffff;
     padding: 20px;
     position: relative;
-    &____employee_id {
-      
+    &__employee_id {
+      height: 32px;
+      margin-bottom: 5px;
+      &__title {
+        width: 85px;
+        display: inline-block;
+      }
+      &__form {
+        width: 130px;
+      }
     }
+    &__name {
+      margin-bottom: 5px;
+      &__kanji {
+        height: 32px;
+        margin-bottom: 5px;
+        &__title {
+          width: 85px;
+          display: inline-block;
+        }
+        &__form {
+          width: 130px;
+        }
+      }
+      &__furigana {
+        height: 32px;
+        &__title {
+          width: 85px;
+          display: inline-block;
+        }
+        &__form {
+          width: 130px;
+        }
+      }
+    }
+    &__birthday {
+      height: 32px;
+      margin-bottom: 5px;
+      &__title {
+        width: 85px;
+        display: inline-block;
+      }
+    }
+    &__sex {
+      position: absolute;
+      top: 20px;
+      left: 280px;
+      height: 32px;
+      margin-bottom: 5px;
+      &__title {
+        width: 35px;
+        display: inline-block;
+      }
+      &__form {
+        width: 50px;
+      }
+    }
+    &__address {
+      margin-bottom: 5px;
+      &__postal_code {
+        height: 32px;
+        margin-bottom: 5px;
+        &__title {
+          width: 85px;
+          display: inline-block;
+        }
+      }
+      &__kanji {
+        height: 32px;
+        margin-bottom: 5px;
+        &__title {
+          width: 85px;
+          display: inline-block;
+        }
+        &__form {
+          width: 720px;
+        }
+      }
+      &__furigana {
+        height: 32px;
+        margin-bottom: 5px;
+        &__title {
+          width: 85px;
+          display: inline-block;
+        }
+        &__form {
+          width: 720px;
+        }
+      }
+    }
+    &__hire_date {
+      margin-bottom: 5px;
+      height: 32px;
+      &__title {
+        width: 85px;
+        display: inline-block;
+      }
+    }
+    &__retirement_date {
+      margin-bottom: 5px;
+      height: 32px;
+      &__title {
+        width: 85px;
+        display: inline-block;
+      }
+    }
+    &__reason_for_retirement {
+      margin-bottom: 5px;
+      height: 32px;
+      &__title {
+        width: 85px;
+        display: inline-block;
+      }
+    }
+    &__employment_status {
+      margin-bottom: 5px;
+      height: 32px;
+      &__title {
+        width: 85px;
+        display: inline-block;
+      }
+    }
+    &__department {
+      margin-bottom: 5px;
+      height: 32px;
+      &__title {
+        width: 85px;
+        display: inline-block;
+      }
+    }
+    &__working {
+      &__hours {
+        margin-bottom: 5px;
+        height: 32px;
+        &__title {
+          width: 85px;
+          display: inline-block;
+        }
+      }
+      &__days {
+        margin-bottom: 5px;
+        height: 32px;
+        &__title {
+          width: 85px;
+          display: inline-block;
+        }
+      }
+    }
+
+
+
     #img_prev {
       width: 135px;
       height: 180px;
@@ -32,12 +181,153 @@
 
   }
 
-
-
-
 }
 
+.employee-form__center__payment {
+  position: absolute;
+  top: 20px;
+  left: 400px;
+  width: 300px;
+  margin-right: 20px;
+  &__title {
+    font-size: 18px;
+  }
+  &__pay_type {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__amount_of_payment {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__commuting_allowance {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+}
 
+.employee-form__center__employment_insurance {
+  position: absolute;
+  top: 280px;
+  left: 660px;
+  width: 300px;
+  margin-right: 20px;
+  &__title {
+    font-size: 18px;
+  }
+  &__acquisition_date {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__number {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+}
+
+.employee-form__center__social_insurance {
+  position: absolute;
+  top: 280px;
+  left: 340px;
+  width: 300px;
+  margin-right: 20px;
+  &__title {
+    font-size: 18px;
+  }
+  &__acquisition_date {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__health_insurance_number {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__basic_pension_number {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__cash {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__in_kind {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__monthly_remuneration {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+  &__standard_monthly_remuneration {
+    margin-bottom: 5px;
+    height: 32px;
+    &__title {
+      width: 85px;
+      display: inline-block;
+    }
+  }
+}
+
+.employee-form__center__submit {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  &__form {
+    background-color: rgb(0, 130, 206);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 20px;
+    word-spacing: 20px;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+  }
+}
 
 
 
