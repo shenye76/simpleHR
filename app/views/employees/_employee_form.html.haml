@@ -2,16 +2,21 @@
   .employee-form__center
     = form_with model: @employee, method: method.to_sym do |f|
       .employee-form__center__employee_id
-        従業員NO.
+        .employee-form__center__employee_id__title
+          従業員NO.
         = f.text_field :employee_id, class: "employee-form__center__employee_id__form form"
-      .name
-        .name__kanji
-          = f.text_field :family_name, class: 'form__name-left', placeholder: '姓'
-          = f.text_field :first_name, class: 'form__name-right', placeholder: '名'
-        .name__hurigana
-          = f.text_field :family_name_f, class: 'form__name-left', placeholder: '姓（ﾌﾘｶﾞﾅ）'
-          = f.text_field :first_name_f, class: 'form__name-right', placeholder: '名（ﾌﾘｶﾞﾅ）'
-      .photo
+      .employee-form__center__name
+        .employee-form__center__name__kanji
+          .employee-form__center__name__kanji__title
+            氏名
+          = f.text_field :family_name, class: 'employee-form__center__name__kanji__form form', placeholder: ' 姓'
+          = f.text_field :first_name, class: 'employee-form__center__name__kanji__form form', placeholder: ' 名'
+        .employee-form__center__name__furigana
+          .employee-form__center__name__furigana__title
+            (ﾌﾘｶﾞﾅ)
+          = f.text_field :family_name_f, class: 'employee-form__center__name__furigana__form form', placeholder: ' 姓（ﾌﾘｶﾞﾅ）'
+          = f.text_field :first_name_f, class: 'employee-form__center__name__furigana__form form', placeholder: ' 名（ﾌﾘｶﾞﾅ）'
+      .employee-form__center__photo
         %label{for: "user_img"}
           = f.file_field :image, id: "user_img", style: "display:none;"
           - if @employee.image.present?
@@ -20,65 +25,117 @@
             = image_tag "https://placehold.jp/c0c0c0/c2c2c2/135x180.jpg?", id: "img_prev"
             .image_tag__word
               ここをクリックして写真を選択
-      .birthday
-        生年月日
-        = f.date_field :birthday, class: 'form__name-right'
-      .sex
-        性別
-        = f.select :sex, Employee.sexes.keys, { prompt: '---' }
-      .address
-        郵便番号
-        = f.number_field :postal_code
-        住所
-        = f.text_field :address
-        住所（フリガナ）
-        = f.text_field :address_f
-      .hire_date
-        入社日
-        = f.date_field :hire_date
-      .retirement_date
-        退職日
-        = f.date_field :retirement_date
-      .reason_for_retirement
-        退職理由
-        = f.text_field :reason_for_retirement
-      .employment_status
-        雇用形態  
-        = f.select :employment_status, ["---", "正社員", "契約社員", "パート・アルバイト", "嘱託社員", "役員"]
-      .department
-        所属部門
-        = f.select :department, ["---", "人事", "経理", "営業", "役員", "その他"]
-      .working_hours
-        労働時間
-        = f.number_field :working_hours
-        労働日数
-        = f.number_field :working_days
-      .payment
-        給与支払形態
-        = f.select :pay_type, Employee.pay_types.keys, { prompt: '---' }
-        給与支給額
-        = f.number_field :amount_of_payment
-        通勤手当
-        = f.number_field :commuting_allowance
-        現金
-        = f.number_field :cash
-        現物
-        = f.number_field :in_kind
-        報酬月額
-        = f.number_field :monthly_remuneration
-        標準報酬月額
-        = f.number_field :standard_monthly_remuneration
-      .social_insurance
-        社会保険加入日
-        = f.date_field :social_insurance_acquisition_date
-        健康保険被保険者番号
-        = f.number_field :health_insurance_number
-        基礎年金番号
-        = f.number_field :basic_pension_number
-      .employment_insurance
-        雇用保険加入日
-        = f.date_field :employment_insurance_acquisition_date
-        雇用保険被保険者番号
-        = f.number_field :employment_insurance_number
-      .submit
-        = f.submit 'Send', class: 'form__submit'
+      .employee-form__center__birthday
+        .employee-form__center__birthday__title
+          生年月日
+        = raw sprintf(f.date_select(:birthday, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+      .employee-form__center__sex
+        .employee-form__center__sex__title
+          性別
+        = f.select :sex, Employee.sexes.keys, { prompt: '---' }, class: "employee-form__center__sex__form form"
+      .employee-form__center__address
+        .employee-form__center__address__postal_code
+          .employee-form__center__address__postal_code__title
+            郵便番号
+          = f.number_field :postal_code, class: "employee-form__center__address__postal_code__form form form_width"
+        .employee-form__center__address__kanji
+          .employee-form__center__address__kanji__title
+            住所
+          = f.text_field :address, class: "employee-form__center__address__kanji__form form"
+        .employee-form__center__address__furigana
+          .employee-form__center__address__furigana__title
+            (ﾌﾘｶﾞﾅ)
+          = f.text_field :address_f, class: "employee-form__center__address__furigana__form form"
+        .employee-form__center__hire_date
+          .employee-form__center__hire_date__title
+            入社日
+          = raw sprintf(f.date_select(:hire_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+        .employee-form__center__retirement_date
+          .employee-form__center__retirement_date__title
+            退職日
+          = raw sprintf(f.date_select(:retirement_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+        .employee-form__center__reason_for_retirement
+          .employee-form__center__reason_for_retirement__title
+            退職理由
+          = f.text_field :reason_for_retirement, class: "employee-form__center__reason_for_retirement__form form form_width"
+        .employee-form__center__employment_status
+          .employee-form__center__employment_status__title
+            雇用形態  
+          = f.select :employment_status, ["---", "正社員", "契約社員", "パート・アルバイト", "嘱託社員", "役員"], {}, class: "employee-form__center__employment_status__form form form_width"
+        .employee-form__center__department
+          .employee-form__center__department__title
+            所属部門
+          = f.select :department, ["---", "人事", "経理", "営業", "役員", "その他"], {}, class: "employee-form__center__department__form form form_width"
+        .employee-form__center__working
+          .employee-form__center__working__hours
+            .employee-form__center__working__hours__title
+              労働時間/週
+            = f.number_field :working_hours, class: "employee-form__center__working__hours__form form form_width"
+          .employee-form__center__working__days
+            .employee-form__center__working__days__title
+              労働日数/週
+            = f.number_field :working_days, class: "employee-form__center__working__days__form form form_width"
+      
+      .employee-form__center__payment
+        .employee-form__center__payment__title
+          給与
+        .employee-form__center__payment__pay_type
+          .employee-form__center__payment__pay_type__title
+            給与支払形態
+          = f.select :pay_type, Employee.pay_types.keys, { prompt: '---' }, class: "employee-form__center__payment__pay_type__form form form_width"
+        .employee-form__center__payment__amount_of_payment
+          .employee-form__center__payment__amount_of_payment__title
+            給与支給額
+          = f.number_field :amount_of_payment, class: "employee-form__center__payment__amount_of_payment__form form form_width"
+        .employee-form__center__payment__commuting_allowance
+          .employee-form__center__payment__commuting_allowance__title
+            通勤手当
+          = f.number_field :commuting_allowance, class: "employee-form__center__payment__commuting_allowance__form form form_width"
+          
+
+      .employee-form__center__employment_insurance
+        .employee-form__center__employment_insurance__title  
+          雇用保険
+        .employee-form__center__employment_insurance__acquisition_date
+          .employee-form__center__employment_insurance__acquisition_date__title
+            加入日
+          = raw sprintf(f.date_select(:employment_insurance_acquisition_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+        .employee-form__center__employment_insurance__number
+          .employee-form__center__employment_insurance__number__title
+            被保険者番号
+          = f.number_field :employment_insurance_number, class: "employee-form__center__employment_insurance__number__form form form_width"
+
+      .employee-form__center__social_insurance
+        .employee-form__center__social_insurance__title
+          社会保険
+        .employee-form__center__social_insurance__acquisition_date
+          .employee-form__center__social_insurance__acquisition_date__title
+            加入日
+          = raw sprintf(f.date_select(:social_insurance_acquisition_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+        .employee-form__center__social_insurance__health_insurance_number
+          .employee-form__center__social_insurance__health_insurance_number__title
+            被保険者番号
+          = f.number_field :health_insurance_number, class: "employee-form__center__social_insurance__health_insurance_number__form form form_width"
+        .employee-form__center__social_insurance__basic_pension_number
+          .employee-form__center__social_insurance__basic_pension_number__title
+            基礎年金番号
+          = f.number_field :basic_pension_number, class: "employee-form__center__social_insurance__basic_pension_number__basic_pension_number__form form form_width"
+        .employee-form__center__social_insurance__cash
+          .employee-form__center__social_insurance__cash__title
+            現金
+          = f.number_field :cash, class: "employee-form__center__social_insurance__cash__form form form_width"
+        .employee-form__center__social_insurance__in_kind
+          .employee-form__center__social_insurance__in_kind__title
+            現物
+          = f.number_field :in_kind, class: "employee-form__center__social_insurance__in_kind__form form form_width"
+        .employee-form__center__social_insurance__monthly_remuneration
+          .employee-form__center__social_insurance__monthly_remuneration__title
+            報酬月額
+          = f.number_field :monthly_remuneration, class: "employee-form__center__social_insurance__monthly_remuneration__form form form_width"
+        .employee-form__center__social_insurance__standard_monthly_remuneration
+          .employee-form__center__social_insurance__standard_monthly_remuneration__title
+            標準報酬月額
+          = f.number_field :standard_monthly_remuneration, class: "employee-form__center__social_insurance__standard_monthly_remuneration__form form form_width"
+
+      .employee-form__center__submit
+        = f.submit "#{send_word}", class: 'employee-form__center__submit__form'

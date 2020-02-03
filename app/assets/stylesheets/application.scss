@@ -20,12 +20,16 @@
   text-decoration: none;
 }
 
-.form {
+.form, .year, .month, .day {
   border-radius: 5px;
   outline: none;
   border: solid 3px grey;
+  height: 32px;
   &:focus {
     border: solid 3px blue;
   }
+}
 
+.form_width {
+  width: 200px;
 }

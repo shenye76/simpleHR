@@ -1,4 +1,11 @@
 .notification {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  min-width: 1000px;
+  width: 100%;
+  
   .notice {
     background-color: #38AEF0;
     color: #ffffff;

@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company
+  layout "header"
 
   def index
     @company = current_company
