@@ -1,3 +1,4 @@
+-# 従業員フォーム
 .employee-form
   .employee-form__center
     = form_with model: @employee, method: method.to_sym do |f|
@@ -91,7 +92,6 @@
           .employee-form__center__payment__commuting_allowance__title
             通勤手当
           = f.number_field :commuting_allowance, class: "employee-form__center__payment__commuting_allowance__form form form_width"
-          
 
       .employee-form__center__employment_insurance
         .employee-form__center__employment_insurance__title  
