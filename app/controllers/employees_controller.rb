@@ -9,9 +9,9 @@ class EmployeesController < ApplicationController
   def task
     @employees = Employee.where(company_id: current_company.id)
     @social_insurance_acquisition_procedures\
-      = @employees.where(social_insurance_condition: 1)
+      = @employees.where(social_insurance_condition: 1).order('social_insurance_acquisition_date ASC')
     @employment_insurance_acquisition_procedures\
-      = @employees.where(employment_insurance_condition: 1)
+      = @employees.where(employment_insurance_condition: 1).order('employment_insurance_acquisition_date ASC')
   end
 
   def task_completed_social_insurance
