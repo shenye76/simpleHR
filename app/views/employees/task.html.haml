@@ -1,33 +1,42 @@
 -# タスクページ
 .task
-  .task__acquisition
-    .task__acquisition__social_insurance
-      社会保険資格取得手続
-      - @social_insurance_acquisition_procedures.each do |employee|
-        = link_to "#" do
-          .task__acquisition_date
-            =employee.social_insurance_acquisition_date
-          .task__employee__name
-            =employee.family_name
-            =employee.first_name
-        .task__completed
-          = form_with model: employee, url: task_completed_social_insurance_employee_path(employee), method: "patch" do |f|
-            = f.submit "手続済にする"
-
-    .task__acquisition__employment_insurance
-      雇用保険資格取得手続
-      - @employment_insurance_acquisition_procedures.each do |employee|
-        = link_to "#" do
-          .task__acquisition_date
-            =employee.employment_insurance_acquisition_date
-          .task__employee__name
-            =employee.family_name
-            =employee.first_name
-        .task__completed
-          = form_with model: employee, url: task_completed_employment_insurance_employee_path(employee), method: "patch" do |f|
-            = f.submit "手続済にする"
-
-
-
-
-
+  .task__center
+    .task__center__acquisition
+      .task__center__acquisition__social_insurance
+        .task__center__acquisition__social_insurance__title
+          社会保険資格取得手続
+        .task__center__acquisition__social_insurance__table
+          .task__center__acquisition__social_insurance__table__title
+            .task__center__acquisition__social_insurance__table__title__acquisition_date
+              加入日
+            .task__center__acquisition__social_insurance__table__title__name
+              氏名
+          - @social_insurance_acquisition_procedures.each do |employee|
+            .task__center__acquisition__social_insurance__table__data
+              = link_to "#", class: "task__center__acquisition__social_insurance__table__data__left link" do
+                .task__center__acquisition__social_insurance__table__data__left__acquisition_date
+                  = employee.social_insurance_acquisition_date
+                .task__center__acquisition__social_insurance__table__data__left__name
+                  = employee.family_name + " " + employee.first_name
+              .task__center__acquisition__social_insurance__table__data__right
+                = form_with model: employee, url: task_completed_social_insurance_employee_path(employee), method: "patch" do |f|
+                  = f.submit "手続済にする", class: "task__center__acquisition__social_insurance__table__data__right__submit"
+      .task__center__acquisition__employment_insurance
+        .task__center__acquisition__employment_insurance__title
+          雇用保険資格取得手続
+        .task__center__acquisition__employment_insurance__table
+          .task__center__acquisition__employment_insurance__table__title
+            .task__center__acquisition__empoyment_insurance__table__title__acquisition_date
+              加入日
+            .task__center__acquisition__employment_insurance__table__title__name
+              氏名
+          - @employment_insurance_acquisition_procedures.each do |employee|
+            .task__center__acquisition__employment_insurance__table__data
+              = link_to "#", class: "task__center__acquisition__employment_insurance__table__data__left link" do
+                .task__center__acquisition__employment_insurance__table__data__left__acquisition_date
+                  = employee.employment_insurance_acquisition_date
+                .task__center__acquisition__employment_insurance__table__data__left__name
+                  = employee.family_name + " " + employee.first_name
+              .task__center__acquisition__employment_insurance__table__data__right
+                = form_with model: employee, url: task_completed_employment_insurance_employee_path(employee), method: "patch" do |f|
+                  = f.submit "手続済にする", class: "task__center__acquisition__employment_insurance__table__data__right__submit"
