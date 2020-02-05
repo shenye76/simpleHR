@@ -1,0 +1,149 @@
+// タスクページ
+.task {
+  min-width: 1000px;
+  height: 621px;
+  background-color: rgb(245, 243, 243);
+  font-size: 14px;
+  &__center {
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    &__acquisition {
+      display: flex;
+      &__social_insurance {
+        margin: 0 auto;
+        &__title {
+        font-size: 18px;
+        }
+        &__table {
+          background-color: lightskyblue;
+          width: 400px;
+          border-left: solid 2px blue;
+          border-right: solid 2px blue;
+          &__title {
+            display: flex;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: blue;
+            color: #ffffff;
+            font-weight: bold;
+            &__acquisition_date {
+              width: 150px;
+            }
+            &__name {
+              width: 150px;
+            }
+          }
+          &__data {
+            position: relative;
+            border-bottom: solid 2px blue;
+            &:hover {
+              background-color: rgb(5, 171, 236);
+            }
+            &__left {
+              display: flex;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              width: 300px;
+              color: black;
+              &__acquisition_date {
+                width: 150px;
+                border-right: solid 1px blue;
+              }
+              &__name {
+                width: 150px;
+                border-right: solid 1px blue;
+              }
+            }
+            &__right {
+              position: absolute;
+              left: 300px;
+              top: 0;
+              &__submit {
+                height: 30px;
+                width: 96px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                &:hover {
+                  font-size: 16px;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__employment_insurance {
+        margin: 0 auto;
+        &__title {
+        font-size: 18px;
+        }
+        &__table {
+          background-color: lightskyblue;
+          width: 400px;
+          border-left: solid 2px blue;
+          border-right: solid 2px blue;
+          &__title {
+            display: flex;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: blue;
+            color: #ffffff;
+            font-weight: bold;
+            &__acquisition_date {
+              width: 150px;
+            }
+            &__name {
+              width: 150px;
+            }
+          }
+          &__data {
+            position: relative;
+            border-bottom: solid 2px blue;
+            &:hover {
+              background-color: rgb(5, 171, 236);
+            }
+            &__left {
+              display: flex;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              width: 300px;
+              color: black;
+              &__acquisition_date {
+                width: 150px;
+                border-right: solid 1px blue;
+              }
+              &__name {
+                width: 150px;
+                border-right: solid 1px blue;
+              }
+            }
+            &__right {
+              position: absolute;
+              left: 300px;
+              top: 0;
+              &__submit {
+                height: 30px;
+                width: 96px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                &:hover {
+                  font-size: 16px;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
