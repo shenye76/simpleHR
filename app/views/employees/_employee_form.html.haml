@@ -50,11 +50,11 @@
         .employee-form__center__hire_date
           .employee-form__center__hire_date__title
             入社日
-          = raw sprintf(f.date_select(:hire_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+          = raw sprintf(f.date_select(:hire_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year + 2, end_year:1900, date_separator: '%s'), '年', '月') + '日'
         .employee-form__center__retirement_date
           .employee-form__center__retirement_date__title
             退職日
-          = raw sprintf(f.date_select(:retirement_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+          = raw sprintf(f.date_select(:retirement_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year + 2, end_year:1900, date_separator: '%s'), '年', '月') + '日'
         .employee-form__center__reason_for_retirement
           .employee-form__center__reason_for_retirement__title
             退職理由
@@ -99,7 +99,7 @@
         .employee-form__center__employment_insurance__acquisition_date
           .employee-form__center__employment_insurance__acquisition_date__title
             加入日
-          = raw sprintf(f.date_select(:employment_insurance_acquisition_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+          = raw sprintf(f.date_select(:employment_insurance_acquisition_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year + 2, end_year:1900, date_separator: '%s'), '年', '月') + '日'
         .employee-form__center__employment_insurance__number
           .employee-form__center__employment_insurance__number__title
             被保険者番号
@@ -111,7 +111,7 @@
         .employee-form__center__social_insurance__acquisition_date
           .employee-form__center__social_insurance__acquisition_date__title
             加入日
-          = raw sprintf(f.date_select(:social_insurance_acquisition_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year - 15, end_year:1900, date_separator: '%s'), '年', '月') + '日'
+          = raw sprintf(f.date_select(:social_insurance_acquisition_date, prompt: "--", use_month_numbers: true, with_css_classes:'form', start_year:Time.now.year + 2, end_year:1900, date_separator: '%s'), '年', '月') + '日'
         .employee-form__center__social_insurance__health_insurance_number
           .employee-form__center__social_insurance__health_insurance_number__title
             被保険者番号
