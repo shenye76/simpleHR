@@ -60,3 +60,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "font-awesome-sass"
 gem 'jquery-rails'
+gem 'fog-aws'
