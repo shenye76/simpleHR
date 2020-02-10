@@ -9,23 +9,23 @@ class EmployeesController < ApplicationController
   def task
     @employees = Employee.where(company_id: current_company.id)
     @social_insurance_acquisition_procedures\
-      = @employees.where(social_insurance_condition: 1).order('social_insurance_acquisition_date ASC')
+      = @employees.where(social_insurance_condition_acquisition: 1).order('social_insurance_acquisition_date ASC')
     @employment_insurance_acquisition_procedures\
-      = @employees.where(employment_insurance_condition: 1).order('employment_insurance_acquisition_date ASC')
+      = @employees.where(employment_insurance_condition_acquisition: 1).order('employment_insurance_acquisition_date ASC')
   end
 
-  def task_completed_social_insurance
+  def task_completed_social_insurance_acquisition
     @employee = Employee.find(params[:id])
-    if @employee.update(social_insurance_condition: 2)
+    if @employee.update(social_insurance_condition_acquisition: 2)
       redirect_to task_employees_path
     else
       render :task
     end
   end
 
-  def task_completed_employment_insurance
+  def task_completed_employment_insurance_acquisition
     @employee = Employee.find(params[:id])
-    if @employee.update(employment_insurance_condition: 2)
+    if @employee.update(employment_insurance_condition_acquisition: 2)
       redirect_to task_employees_path
     else
       render :task
