@@ -19,7 +19,7 @@
                 .task__center__acquisition__social_insurance__table__data__left__name
                   = employee.family_name + " " + employee.first_name
               .task__center__acquisition__social_insurance__table__data__right
-                = form_with model: employee, url: task_completed_social_insurance_employee_path(employee), method: "patch" do |f|
+                = form_with model: employee, url: task_completed_social_insurance_acquisition_employee_path(employee), method: "patch" do |f|
                   = f.submit "手続済にする", class: "task__center__acquisition__social_insurance__table__data__right__submit"
       .task__center__acquisition__employment_insurance
         .task__center__acquisition__employment_insurance__title
@@ -38,5 +38,5 @@
                 .task__center__acquisition__employment_insurance__table__data__left__name
                   = employee.family_name + " " + employee.first_name
               .task__center__acquisition__employment_insurance__table__data__right
-                = form_with model: employee, url: task_completed_employment_insurance_employee_path(employee), method: "patch" do |f|
+                = form_with model: employee, url: task_completed_employment_insurance_acquisition_employee_path(employee), method: "patch" do |f|
                   = f.submit "手続済にする", class: "task__center__acquisition__employment_insurance__table__data__right__submit"
