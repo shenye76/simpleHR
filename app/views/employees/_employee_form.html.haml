@@ -1,7 +1,7 @@
 -# 従業員フォーム
 .employee-form
   .employee-form__center
-    = form_with model: @employee, method: method.to_sym do |f|
+    = form_with model: @employee, local: true, method: method.to_sym do |f|
       .employee-form__center__employee_id
         .employee-form__center__employee_id__title
           従業員NO.
